@@ -10,3 +10,15 @@ In file included from ../HTTPClient.h:5:0,
                     ^
 compilation terminated.
 make: *** [HTTPClient.o] Error 1
+15:21:35 **** Incremental Build of configuration Debug for project http_client ****
+make all 
+Building target: libhttp_client.a
+Invoking: GCC Archiver
+ar -r  "libhttp_client.a"   
+ar: creating libhttp_client.a
+Finished building target: libhttp_client.a
+ 
+
+**** Build of configuration Debug for project http_client_app ****
+
+Nothing to build for project http_client_app
