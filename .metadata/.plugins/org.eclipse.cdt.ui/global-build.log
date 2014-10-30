@@ -1,0 +1,12 @@
+14:57:31 **** Incremental Build of configuration Debug for project http_client ****
+make all 
+Building file: ../HTTPClient.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"HTTPClient.d" -MT"HTTPClient.d" -o "HTTPClient.o" "../HTTPClient.c"
+In file included from ../HTTPClient.h:5:0,
+                 from ../HTTPClient.c:21:
+../HTTPClientWrapper.h:9:20: fatal error: socket.h: No such file or directory
+ #include <socket.h>
+                    ^
+compilation terminated.
+make: *** [HTTPClient.o] Error 1

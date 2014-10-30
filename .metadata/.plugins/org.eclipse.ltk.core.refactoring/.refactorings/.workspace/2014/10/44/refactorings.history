@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 9 resources" deleteContents="false" description="Delete 9 resources" element1="/http_client/HTTPClient.c" element2="/http_client/HTTPClient.h" element3="/http_client/HTTPClientAuth.c" element4="/http_client/HTTPClientAuth.h" element5="/http_client/HTTPClientCommon.h" element6="/http_client/HTTPClientString.c" element7="/http_client/HTTPClientString.h" element8="/http_client/HTTPClientWrapper.c" element9="/http_client/HTTPClientWrapper.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="9" stamp="1414652496023"/>
+</session>
