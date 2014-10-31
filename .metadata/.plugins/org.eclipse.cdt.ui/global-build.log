@@ -1,24 +1,408 @@
-14:57:31 **** Incremental Build of configuration Debug for project http_client ****
+18:43:14 **** Incremental Build of configuration Debug for project http_client ****
 make all 
-Building file: ../HTTPClient.c
+Building file: ../bb_url.c
 Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"HTTPClient.d" -MT"HTTPClient.d" -o "HTTPClient.o" "../HTTPClient.c"
-In file included from ../HTTPClient.h:5:0,
-                 from ../HTTPClient.c:21:
-../HTTPClientWrapper.h:9:20: fatal error: socket.h: No such file or directory
- #include <socket.h>
-                    ^
-compilation terminated.
-make: *** [HTTPClient.o] Error 1
-15:21:35 **** Incremental Build of configuration Debug for project http_client ****
-make all 
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_url.d" -MT"bb_url.d" -o "bb_url.o" "../bb_url.c"
+Finished building: ../bb_url.c
+ 
 Building target: libhttp_client.a
 Invoking: GCC Archiver
-ar -r  "libhttp_client.a"   
+ar -r  "libhttp_client.a"  ./bb_base64.o ./bb_httpclient.o ./bb_network.o ./bb_porting.o ./bb_stringx.o ./bb_url.o   
 ar: creating libhttp_client.a
 Finished building target: libhttp_client.a
  
-
-**** Build of configuration Debug for project http_client_app ****
-
-Nothing to build for project http_client_app
+18:47:08 **** Incremental Build of configuration Debug for project http_client ****
+make all 
+Building file: ../bb_httpclient.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_httpclient.d" -MT"bb_httpclient.d" -o "bb_httpclient.o" "../bb_httpclient.c"
+../bb_httpclient.c: In function ‘http_req’:
+../bb_httpclient.c:184:4: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+    close(sock);
+    ^
+Finished building: ../bb_httpclient.c
+ 
+Building target: libhttp_client.a
+Invoking: GCC Archiver
+ar -r  "libhttp_client.a"  ./bb_base64.o ./bb_httpclient.o ./bb_network.o ./bb_porting.o ./bb_stringx.o ./bb_url.o   
+ar: creating libhttp_client.a
+Finished building target: libhttp_client.a
+ 
+18:47:08 **** Incremental Build of configuration Debug for project http_client_app ****
+make all 
+Building target: http_client_app
+Invoking: GCC C Linker
+gcc -m32 -L"/home/ethan/http/http_client/Debug" -o "http_client_app"  ./src/http_client_app.o   -lhttp_client
+Finished building target: http_client_app
+ 
+18:47:08 **** Incremental Build of configuration Debug for project port_exam_app ****
+make all 
+make: Nothing to be done for `all'.
+18:47:19 **** Incremental Build of configuration Debug for project http_client_app ****
+make all 
+make: Nothing to be done for `all'.
+18:47:52 **** Incremental Build of configuration Debug for project http_client_app ****
+make all 
+make: Nothing to be done for `all'.
+18:48:40 **** Incremental Build of configuration Debug for project http_client ****
+make all 
+make: Nothing to be done for `all'.
+18:48:41 **** Incremental Build of configuration Debug for project http_client_app ****
+make all 
+Building file: ../src/http_client_app.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -I"/home/ethan/http/http_client" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/http_client_app.d" -MT"src/http_client_app.d" -o "src/http_client_app.o" "../src/http_client_app.c"
+Finished building: ../src/http_client_app.c
+ 
+Building target: http_client_app
+Invoking: GCC C Linker
+gcc -m32 -L"/home/ethan/http/http_client/Debug" -o "http_client_app"  ./src/http_client_app.o   -lhttp_client
+Finished building target: http_client_app
+ 
+18:48:41 **** Incremental Build of configuration Debug for project port_exam_app ****
+make all 
+make: Nothing to be done for `all'.
+18:48:44 **** Incremental Build of configuration Debug for project http_client_app ****
+make all 
+make: Nothing to be done for `all'.
+18:50:26 **** Incremental Build of configuration Debug for project http_client_app ****
+make all 
+make: Nothing to be done for `all'.
+18:57:00 **** Incremental Build of configuration Debug for project http_client ****
+make all 
+Building file: ../bb_network.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_network.d" -MT"bb_network.d" -o "bb_network.o" "../bb_network.c"
+../bb_network.c: In function ‘bb_hostname_to_ip’:
+../bb_network.c:24:2: error: aggregate value used where an integer was expected
+  uint32_t ip = (uint32_t)(*addr_list[0]);
+  ^
+../bb_network.c:26:2: error: incompatible type for argument 1 of ‘inet_ntoa’
+  printf("address: %s",inet_ntoa(ip) );
+  ^
+In file included from ../bb_porting.h:17:0,
+                 from ../bb_network.c:2:
+/usr/include/arpa/inet.h:53:14: note: expected ‘struct in_addr’ but argument is of type ‘uint32_t’
+ extern char *inet_ntoa (struct in_addr __in) __THROW;
+              ^
+make: *** [bb_network.o] Error 1
+18:57:00 **** Incremental Build of configuration Debug for project http_client_app ****
+make all 
+make: Nothing to be done for `all'.
+18:57:00 **** Incremental Build of configuration Debug for project port_exam_app ****
+make all 
+make: Nothing to be done for `all'.
+18:57:53 **** Clean-only build of configuration Debug for project http_client ****
+make clean 
+rm -rf  ./bb_base64.o ./bb_httpclient.o ./bb_network.o ./bb_porting.o ./bb_stringx.o ./bb_url.o  ./bb_base64.d ./bb_httpclient.d ./bb_network.d ./bb_porting.d ./bb_stringx.d ./bb_url.d  libhttp_client.a
+ 
+18:57:53 **** Clean-only build of configuration Debug for project http_client_app ****
+make clean 
+rm -rf  ./src/http_client_app.o  ./src/http_client_app.d  http_client_app
+ 
+18:57:53 **** Clean-only build of configuration Debug for project port_exam_app ****
+make clean 
+rm -rf  ./src/get_host_by_name.o ./src/port_exam_app.o  ./src/get_host_by_name.d ./src/port_exam_app.d  port_exam_app
+ 
+18:57:56 **** Build of configuration Debug for project http_client ****
+make all 
+Building file: ../bb_base64.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_base64.d" -MT"bb_base64.d" -o "bb_base64.o" "../bb_base64.c"
+Finished building: ../bb_base64.c
+ 
+Building file: ../bb_httpclient.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_httpclient.d" -MT"bb_httpclient.d" -o "bb_httpclient.o" "../bb_httpclient.c"
+../bb_httpclient.c: In function ‘http_req’:
+../bb_httpclient.c:184:4: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+    close(sock);
+    ^
+Finished building: ../bb_httpclient.c
+ 
+Building file: ../bb_network.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_network.d" -MT"bb_network.d" -o "bb_network.o" "../bb_network.c"
+../bb_network.c: In function ‘bb_hostname_to_ip’:
+../bb_network.c:24:2: error: aggregate value used where an integer was expected
+  uint32_t ip = (uint32_t)(*addr_list[0]);
+  ^
+../bb_network.c:26:2: error: incompatible type for argument 1 of ‘inet_ntoa’
+  printf("address: %s",inet_ntoa(ip) );
+  ^
+In file included from ../bb_porting.h:17:0,
+                 from ../bb_network.c:2:
+/usr/include/arpa/inet.h:53:14: note: expected ‘struct in_addr’ but argument is of type ‘uint32_t’
+ extern char *inet_ntoa (struct in_addr __in) __THROW;
+              ^
+make: *** [bb_network.o] Error 1
+18:57:57 **** Build of configuration Debug for project http_client_app ****
+make all 
+Building file: ../src/http_client_app.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -I"/home/ethan/http/http_client" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/http_client_app.d" -MT"src/http_client_app.d" -o "src/http_client_app.o" "../src/http_client_app.c"
+Finished building: ../src/http_client_app.c
+ 
+Building target: http_client_app
+Invoking: GCC C Linker
+gcc -m32 -L"/home/ethan/http/http_client/Debug" -o "http_client_app"  ./src/http_client_app.o   -lhttp_client
+/usr/bin/ld: cannot find -lhttp_client
+collect2: error: ld returned 1 exit status
+make: *** [http_client_app] Error 1
+18:57:57 **** Build of configuration Debug for project port_exam_app ****
+make all 
+Building file: ../src/get_host_by_name.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/get_host_by_name.d" -MT"src/get_host_by_name.d" -o "src/get_host_by_name.o" "../src/get_host_by_name.c"
+Finished building: ../src/get_host_by_name.c
+ 
+Building file: ../src/port_exam_app.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/port_exam_app.d" -MT"src/port_exam_app.d" -o "src/port_exam_app.o" "../src/port_exam_app.c"
+Finished building: ../src/port_exam_app.c
+ 
+Building target: port_exam_app
+Invoking: GCC C Linker
+gcc  -o "port_exam_app"  ./src/get_host_by_name.o ./src/port_exam_app.o   
+Finished building target: port_exam_app
+ 
+19:00:21 **** Incremental Build of configuration Debug for project http_client ****
+make all 
+Building file: ../bb_network.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_network.d" -MT"bb_network.d" -o "bb_network.o" "../bb_network.c"
+../bb_network.c: In function ‘bb_hostname_to_ip’:
+../bb_network.c:28:2: error: incompatible types when returning type ‘struct in_addr’ but ‘unsigned int’ was expected
+  return ip;
+  ^
+../bb_network.c:29:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [bb_network.o] Error 1
+19:00:21 **** Incremental Build of configuration Debug for project http_client_app ****
+make all 
+Building target: http_client_app
+Invoking: GCC C Linker
+gcc -m32 -L"/home/ethan/http/http_client/Debug" -o "http_client_app"  ./src/http_client_app.o   -lhttp_client
+/usr/bin/ld: cannot find -lhttp_client
+collect2: error: ld returned 1 exit status
+make: *** [http_client_app] Error 1
+19:00:22 **** Incremental Build of configuration Debug for project port_exam_app ****
+make all 
+make: Nothing to be done for `all'.
+19:00:35 **** Incremental Build of configuration Debug for project http_client ****
+make all 
+Building file: ../bb_network.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_network.d" -MT"bb_network.d" -o "bb_network.o" "../bb_network.c"
+../bb_network.c: In function ‘bb_hostname_to_ip’:
+../bb_network.c:28:2: error: incompatible types when returning type ‘struct in_addr’ but ‘unsigned int’ was expected
+  return ip;
+  ^
+../bb_network.c:29:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [bb_network.o] Error 1
+19:00:35 **** Incremental Build of configuration Debug for project http_client_app ****
+make all 
+Building target: http_client_app
+Invoking: GCC C Linker
+gcc -m32 -L"/home/ethan/http/http_client/Debug" -o "http_client_app"  ./src/http_client_app.o   -lhttp_client
+/usr/bin/ld: cannot find -lhttp_client
+collect2: error: ld returned 1 exit status
+make: *** [http_client_app] Error 1
+19:00:35 **** Incremental Build of configuration Debug for project port_exam_app ****
+make all 
+make: Nothing to be done for `all'.
+19:01:15 **** Incremental Build of configuration Debug for project http_client ****
+make all 
+Building file: ../bb_network.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_network.d" -MT"bb_network.d" -o "bb_network.o" "../bb_network.c"
+../bb_network.c: In function ‘bb_hostname_to_ip’:
+../bb_network.c:29:10: error: ‘uint_32’ undeclared (first use in this function)
+  return (uint_32)ip.s_addr;
+          ^
+../bb_network.c:29:10: note: each undeclared identifier is reported only once for each function it appears in
+../bb_network.c:29:18: error: expected ‘;’ before ‘ip’
+  return (uint_32)ip.s_addr;
+                  ^
+../bb_network.c:30:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [bb_network.o] Error 1
+19:01:15 **** Incremental Build of configuration Debug for project http_client_app ****
+make all 
+Building target: http_client_app
+Invoking: GCC C Linker
+gcc -m32 -L"/home/ethan/http/http_client/Debug" -o "http_client_app"  ./src/http_client_app.o   -lhttp_client
+/usr/bin/ld: cannot find -lhttp_client
+collect2: error: ld returned 1 exit status
+make: *** [http_client_app] Error 1
+19:01:15 **** Incremental Build of configuration Debug for project port_exam_app ****
+make all 
+make: Nothing to be done for `all'.
+19:01:37 **** Incremental Build of configuration Debug for project http_client ****
+make all 
+Building file: ../bb_network.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_network.d" -MT"bb_network.d" -o "bb_network.o" "../bb_network.c"
+../bb_network.c: In function ‘bb_hostname_to_ip’:
+../bb_network.c:29:10: error: ‘uint_32_t’ undeclared (first use in this function)
+  return (uint_32_t)ip.s_addr;
+          ^
+../bb_network.c:29:10: note: each undeclared identifier is reported only once for each function it appears in
+../bb_network.c:29:20: error: expected ‘;’ before ‘ip’
+  return (uint_32_t)ip.s_addr;
+                    ^
+../bb_network.c:30:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [bb_network.o] Error 1
+19:01:37 **** Incremental Build of configuration Debug for project http_client_app ****
+make all 
+Building target: http_client_app
+Invoking: GCC C Linker
+gcc -m32 -L"/home/ethan/http/http_client/Debug" -o "http_client_app"  ./src/http_client_app.o   -lhttp_client
+/usr/bin/ld: cannot find -lhttp_client
+collect2: error: ld returned 1 exit status
+make: *** [http_client_app] Error 1
+19:01:37 **** Incremental Build of configuration Debug for project port_exam_app ****
+make all 
+make: Nothing to be done for `all'.
+19:01:57 **** Incremental Build of configuration Debug for project http_client ****
+make all 
+Building file: ../bb_network.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_network.d" -MT"bb_network.d" -o "bb_network.o" "../bb_network.c"
+Finished building: ../bb_network.c
+ 
+Building file: ../bb_porting.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_porting.d" -MT"bb_porting.d" -o "bb_porting.o" "../bb_porting.c"
+Finished building: ../bb_porting.c
+ 
+Building file: ../bb_stringx.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_stringx.d" -MT"bb_stringx.d" -o "bb_stringx.o" "../bb_stringx.c"
+Finished building: ../bb_stringx.c
+ 
+Building file: ../bb_url.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_url.d" -MT"bb_url.d" -o "bb_url.o" "../bb_url.c"
+Finished building: ../bb_url.c
+ 
+Building target: libhttp_client.a
+Invoking: GCC Archiver
+ar -r  "libhttp_client.a"  ./bb_base64.o ./bb_httpclient.o ./bb_network.o ./bb_porting.o ./bb_stringx.o ./bb_url.o   
+ar: creating libhttp_client.a
+Finished building target: libhttp_client.a
+ 
+19:01:57 **** Incremental Build of configuration Debug for project http_client_app ****
+make all 
+Building target: http_client_app
+Invoking: GCC C Linker
+gcc -m32 -L"/home/ethan/http/http_client/Debug" -o "http_client_app"  ./src/http_client_app.o   -lhttp_client
+Finished building target: http_client_app
+ 
+19:01:58 **** Incremental Build of configuration Debug for project port_exam_app ****
+make all 
+make: Nothing to be done for `all'.
+19:02:12 **** Incremental Build of configuration Debug for project http_client ****
+make all 
+make: Nothing to be done for `all'.
+19:02:12 **** Incremental Build of configuration Debug for project http_client_app ****
+make all 
+make: Nothing to be done for `all'.
+19:02:12 **** Incremental Build of configuration Debug for project port_exam_app ****
+make all 
+make: Nothing to be done for `all'.
+19:02:19 **** Incremental Build of configuration Debug for project http_client_app ****
+make all 
+make: Nothing to be done for `all'.
+19:03:08 **** Clean-only build of configuration Debug for project http_client ****
+make clean 
+rm -rf  ./bb_base64.o ./bb_httpclient.o ./bb_network.o ./bb_porting.o ./bb_stringx.o ./bb_url.o  ./bb_base64.d ./bb_httpclient.d ./bb_network.d ./bb_porting.d ./bb_stringx.d ./bb_url.d  libhttp_client.a
+ 
+19:03:08 **** Clean-only build of configuration Debug for project http_client_app ****
+make clean 
+rm -rf  ./src/http_client_app.o  ./src/http_client_app.d  http_client_app
+ 
+19:03:08 **** Clean-only build of configuration Debug for project port_exam_app ****
+make clean 
+rm -rf  ./src/get_host_by_name.o ./src/port_exam_app.o  ./src/get_host_by_name.d ./src/port_exam_app.d  port_exam_app
+ 
+19:03:12 **** Build of configuration Debug for project http_client ****
+make all 
+Building file: ../bb_base64.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_base64.d" -MT"bb_base64.d" -o "bb_base64.o" "../bb_base64.c"
+Finished building: ../bb_base64.c
+ 
+Building file: ../bb_httpclient.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_httpclient.d" -MT"bb_httpclient.d" -o "bb_httpclient.o" "../bb_httpclient.c"
+../bb_httpclient.c: In function ‘http_req’:
+../bb_httpclient.c:184:4: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+    close(sock);
+    ^
+Finished building: ../bb_httpclient.c
+ 
+Building file: ../bb_network.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_network.d" -MT"bb_network.d" -o "bb_network.o" "../bb_network.c"
+Finished building: ../bb_network.c
+ 
+Building file: ../bb_porting.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_porting.d" -MT"bb_porting.d" -o "bb_porting.o" "../bb_porting.c"
+Finished building: ../bb_porting.c
+ 
+Building file: ../bb_stringx.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_stringx.d" -MT"bb_stringx.d" -o "bb_stringx.o" "../bb_stringx.c"
+Finished building: ../bb_stringx.c
+ 
+Building file: ../bb_url.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"bb_url.d" -MT"bb_url.d" -o "bb_url.o" "../bb_url.c"
+Finished building: ../bb_url.c
+ 
+Building target: libhttp_client.a
+Invoking: GCC Archiver
+ar -r  "libhttp_client.a"  ./bb_base64.o ./bb_httpclient.o ./bb_network.o ./bb_porting.o ./bb_stringx.o ./bb_url.o   
+ar: creating libhttp_client.a
+Finished building target: libhttp_client.a
+ 
+19:03:12 **** Build of configuration Debug for project http_client_app ****
+make all 
+Building file: ../src/http_client_app.c
+Invoking: GCC C Compiler
+gcc -m32 -D_LINUX -I"/home/ethan/http/http_client" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/http_client_app.d" -MT"src/http_client_app.d" -o "src/http_client_app.o" "../src/http_client_app.c"
+Finished building: ../src/http_client_app.c
+ 
+Building target: http_client_app
+Invoking: GCC C Linker
+gcc -m32 -L"/home/ethan/http/http_client/Debug" -o "http_client_app"  ./src/http_client_app.o   -lhttp_client
+Finished building target: http_client_app
+ 
+19:03:12 **** Build of configuration Debug for project port_exam_app ****
+make all 
+Building file: ../src/get_host_by_name.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/get_host_by_name.d" -MT"src/get_host_by_name.d" -o "src/get_host_by_name.o" "../src/get_host_by_name.c"
+Finished building: ../src/get_host_by_name.c
+ 
+Building file: ../src/port_exam_app.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/port_exam_app.d" -MT"src/port_exam_app.d" -o "src/port_exam_app.o" "../src/port_exam_app.c"
+Finished building: ../src/port_exam_app.c
+ 
+Building target: port_exam_app
+Invoking: GCC C Linker
+gcc  -o "port_exam_app"  ./src/get_host_by_name.o ./src/port_exam_app.o   
+Finished building target: port_exam_app
+ 
+19:03:27 **** Incremental Build of configuration Debug for project http_client_app ****
+make all 
+make: Nothing to be done for `all'.

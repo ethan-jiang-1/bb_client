@@ -31,3 +31,4 @@
 # Misc
 *.log
 
+*/.metadata/*
