@@ -103,7 +103,9 @@ static const char *parse_number(cJSON *item,const char *num)
 		while (*num>='0' && *num<='9') subscale=(subscale*10)+(*num++ - '0');	/* Number? */
 	}
 
-	n=sign*n*pow(10.0,(scale+subscale*signsubscale));	/* number = +/- number.fraction * 10^+/- exponent */
+	//n=sign*n*pow(10.0,(scale+subscale*signsubscale));	/* number = +/- number.fraction * 10^+/- exponent */
+	//ethan : we will ignore float/double here, as likeky there is no pow in embedded system
+	n = sign*n;
 
 	item->valuedouble=n;
 	item->valueint=(int)n;
@@ -126,9 +128,12 @@ static char *print_number(cJSON *item)
 		str=(char*)cJSON_malloc(64);	/* This is a nice tradeoff. */
 		if (str)
 		{
-			if (fabs(floor(d)-d)<=DBL_EPSILON && fabs(d)<1.0e60)sprintf(str,"%.0f",d);
-			else if (fabs(d)<1.0e-6 || fabs(d)>1.0e9)			sprintf(str,"%e",d);
-			else												sprintf(str,"%f",d);
+			//if (fabs(floor(d)-d)<=DBL_EPSILON && fabs(d)<1.0e60)sprintf(str,"%.0f",d);
+			//else if (fabs(d)<1.0e-6 || fabs(d)>1.0e9)			sprintf(str,"%e",d);
+			//else												sprintf(str,"%f",d);
+			//ethan: as there likely no floor fun in embeded system, just ignore the first case.
+			if (fabs(d)<1.0e-6 || fabs(d)>1.0e9)			sprintf(str,"%e",d);
+			else											sprintf(str,"%f",d);
 		}
 	}
 	return str;

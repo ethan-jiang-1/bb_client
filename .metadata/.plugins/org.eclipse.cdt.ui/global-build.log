@@ -1,11 +1,10 @@
-22:10:40 **** Build of configuration Debug for project cjson_app ****
+22:48:37 **** Incremental Build of configuration Debug for project cjson_app ****
 make all 
 Building target: cjson_app
 Invoking: GCC C Linker
 gcc -m32 -L"/home/ethan/http/cjson/Debug" -lm -o "cjson_app"  ./src/cjson_app.o   -lcjson -lcheck
-/home/ethan/http/cjson/Debug/libcjson.a(cjson.o): In function `parse_number':
-/home/ethan/http/cjson/Debug/../cjson.c:106: undefined reference to `pow'
-/home/ethan/http/cjson/Debug/libcjson.a(cjson.o): In function `print_number':
-/home/ethan/http/cjson/Debug/../cjson.c:129: undefined reference to `floor'
-collect2: error: ld returned 1 exit status
-make: *** [cjson_app] Error 1
+Finished building target: cjson_app
+ 
+22:49:10 **** Incremental Build of configuration Debug for project cjson_app ****
+make all 
+make: Nothing to be done for `all'.

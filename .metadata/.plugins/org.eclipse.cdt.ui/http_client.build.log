@@ -1,4 +1,4 @@
-22:10:21 **** Incremental Build of configuration Debug for project http_client ****
+22:37:32 **** Incremental Build of configuration Debug for project http_client ****
 make all 
 Building file: ../bb_base64.c
 Invoking: GCC C Compiler
@@ -41,5 +41,5 @@ ar: creating libhttp_client.a
 Finished building target: libhttp_client.a
  
 
-22:10:22 Build Finished (took 663ms)
+22:37:34 Build Finished (took 1s.550ms)
 
