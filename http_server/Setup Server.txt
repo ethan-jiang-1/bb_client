@@ -1,0 +1,10 @@
+Steps to setup http server to test the http client.
+
+The server is written in Rails. 
+
+1) Linux environment is the best place to run rails
+2) Install Ruby - 1.9.3 or 2.0.0 above
+3) Install Rails
+4) Run Bundle in this folder to make sure the application get all required gem (ruby libiray)
+5) lanch the server by typing: sudo rails s -p 80 
+   

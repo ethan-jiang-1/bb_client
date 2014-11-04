@@ -39,3 +39,4 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'pry', group: [:development, :test]
 gem 'byebug', group: [:development, :test]
 
+gem 'devise'

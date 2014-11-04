@@ -8,3 +8,6 @@ Finished building target: cjson_app
 22:49:10 **** Incremental Build of configuration Debug for project cjson_app ****
 make all 
 make: Nothing to be done for `all'.
+11:02:18 **** Incremental Build of configuration Debug for project cjson_app ****
+make all 
+make: Nothing to be done for `all'.
