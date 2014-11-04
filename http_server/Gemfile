@@ -39,4 +39,12 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'pry', group: [:development, :test]
 gem 'byebug', group: [:development, :test]
 
-gem 'devise'
+#gem 'devise'
+
+#For Rails 4.1 use master and the following dependency branches:
+gem 'activeadmin',      github: 'gregbell/active_admin'             # ActiveAdmin backend framework for Rails administration interface
+gem 'polyamorous',      github: 'activerecord-hackery/polyamorous'  # Require for ActiveAdmin to work with Rails 4.1
+gem 'ransack',          github: 'activerecord-hackery/ransack'      # Require for ActiveAdmin to work with Rails 4.1
+gem 'formtastic',       github: 'justinfrench/formtastic'           # Require for ActiveAdmin to work with Rails 4.1
+gem 'devise'                                                        # Authentication
+
