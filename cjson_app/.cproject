@@ -40,7 +40,7 @@
 								<option id="gnu.c.link.option.paths.808704914" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/cjson/Debug}&quot;"/>
 								</option>
-								<option id="gnu.c.link.option.ldflags.1068051952" superClass="gnu.c.link.option.ldflags" value="-lm" valueType="string"/>
+								<option id="gnu.c.link.option.ldflags.1068051952" name="Linker flags" superClass="gnu.c.link.option.ldflags" value="-lm" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.1063102711" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
